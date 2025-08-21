@@ -1,9 +1,11 @@
 import React from 'react'
 import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div className='font-sans'>
+    <div className='font-sans max-w-screen-lg mx-auto'>
+      <Navbar />
       <Hero />
     </div>
   )
