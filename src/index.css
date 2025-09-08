@@ -14,7 +14,7 @@
   --font-sans: "Gabarito", ui-sans-serif, system-ui, sans-serif;
   --color-primary: #16aaaf;
   --color-secondary: #f7f8fa;
-  --color-background: #ffffff;
+  --color-background: #F0F8FF;
   --color-primary-dark: #0f7a7d;
 }
 
@@ -34,4 +34,17 @@ h2 {
 }
 h3 {
   @apply text-2xl font-medium mb-2;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
