@@ -27,27 +27,21 @@ const Implementation = () => {
           Real-Time Implementation
         </h1>
         <p className="text-base md:text-xl text-[#56cfe1] max-w-4xl leading-relaxed">
-          Our pipeline translates silent articulation into spoken output through a streamlined sequence of visual processing and inference.
+          Our system processes visual speech cues through a carefully designed, streamlined pipeline, where each step is thoughtfully optimized to ensure speed, clarity, and precision. From the moment visual input is received, every stage—from data preprocessing to feature extraction and final interpretation—is fine-tuned to deliver accurate results in real time. This approach not only enhances performance but also ensures a smooth and responsive experience for users who rely on clear, intuitive communication.
         </p>
       </div>
 
-      {/* Process Flow */}
-      <div className="max-w-screen-xl mx-auto mt-20 px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center text-center relative lg:w-1/4">
-              {/* Connector Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 right-0 w-full h-1 bg-[#64dfdf] z-0" />
-              )}
-              {/* Dot */}
-              <div className="w-5 h-5 bg-[#64dfdf] rounded-full z-10 mb-4" />
-              {/* Title & Description */}
-              <h3 className="text-lg font-semibold text-[#64dfdf] mb-2">{step.title}</h3>
-              <p className="text-sm text-gray-400 max-w-xs">{step.description}</p>
+      {/* 2-column Circle Layout */}
+      <div className="max-w-screen-md mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-16">
+        {steps.map((step, index) => (
+          <div key={index} className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-[#64dfdf] flex items-center justify-center text-black font-bold text-lg mb-6">
+              {index + 1}
             </div>
-          ))}
-        </div>
+            <h3 className="text-xl font-semibold text-[#64dfdf] mb-2">{step.title}</h3>
+            <p className="text-[1rem] text-gray-400 max-w-xs">{step.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   )
