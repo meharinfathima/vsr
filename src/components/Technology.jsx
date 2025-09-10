@@ -25,13 +25,13 @@ const Technology = () => {
   return (
     <section id="technology" className="w-full py-20 px-6 md:px-8">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center text-center gap-6">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-primary via-black to-primary bg-clip-text text-transparent tracking-tight leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#64dfdf] tracking-tight leading-tight">
           Technology Used
         </h1>
-        <p className="text-base md:text-xl text-primary-dark max-w-4xl leading-relaxed">
+        <p className="text-base md:text-xl text-[#56cfe1] max-w-4xl leading-relaxed">
           Our silent speech recognition system combines advanced signal processing, machine learning, and sensor integration to decode unspoken communication. By capturing subtle facial movements, muscle signals, and gestures, our technology translates silent intent into spoken language—instantly and accurately.
         </p>
-        <p className="text-base md:text-xl text-primary-dark max-w-4xl leading-relaxed">
+        <p className="text-base md:text-xl text-[#56cfe1] max-w-4xl leading-relaxed">
           Built with accessibility and real-world usability in mind, our platform is lightweight, responsive, and adaptable to diverse user needs. Whether it's wearable sensors or camera-based input, SilentSpeech is designed to empower expression without sound.
         </p>
       </div>
@@ -42,15 +42,15 @@ const Technology = () => {
           <div key={index} className="group perspective">
             <div className="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
               {/* Front Side */}
-              <div className="absolute w-full h-full bg-white border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-center items-center backface-hidden">
+              <div className="absolute w-full h-full bg-[#000000] text-[#56cfe1] border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-center items-center backface-hidden">
                 <img src={card.svgPath} alt={card.title} className="h-12 w-12 mb-4" />
                 <h3 className="text-xl font-semibold text-primary mb-2">{card.title}</h3>
-                <p className="text-[1.1rem] text-gray-600 text-center">{card.front}</p>
+                <p className="text-[1.1rem] text-gray-400 text-center">{card.front}</p>
               </div>
               {/* Back Side */}
-              <div className="absolute w-full h-full bg-primary text-white rounded-xl shadow-md p-6 flex flex-col justify-center items-center rotate-y-180 backface-hidden">
-                <p className="text-[1.2rem] text-white text-center mb-4">{card.back}</p>
-                <ul className="list-disc list-inside text-[1rem] text-white text-left max-w-xs space-y-1">
+              <div className="absolute w-full h-full bg-black text-[#56cfe1] rounded-xl shadow-md p-6 flex flex-col justify-center items-center rotate-y-180 backface-hidden">
+                <p className="text-[1.2rem] text-[#56cfe1] text-center mb-4">{card.back}</p>
+                <ul className="list-disc list-inside text-[1rem] text-gray-400 text-left max-w-xs space-y-1">
                   {card.title === 'Visual Recognition' && (
                     <>
                       <li>Tracks lip contours and motion </li>

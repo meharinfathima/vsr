@@ -5,6 +5,7 @@ import About from './components/About'
 import Technology from './components/Technology'
 import Team from './components/Team'
 import SplashCursor from '../Reactbits/SplashCursor/SplashCursor'
+import Implementation from './components/Implementation'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <About />
         <Technology />
         <Team />
+        <Implementation />
       </div>
     </div>
   )

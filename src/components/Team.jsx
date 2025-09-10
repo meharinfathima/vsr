@@ -1,29 +1,33 @@
 import React from 'react'
 
-const teamMembers = [
+const teamCards = [
   {
-    name: 'Giribala Arun',
-    role: 'Frontend Developer',
-    image: '/src/assets/dazzling-star-svgrepo-com.svg',
-    bio: 'Focused on UI/UX precision, accessibility, and clean React architecture.'
+    name: 'Darsan Prasad',
+    role: 'ML Engineer',
+    front: 'Builds models that decode silent speech.',
+    back: 'Specializes in deep learning & inference.',
+    highlight: 'Optimized real-time prediction pipeline.'
   },
   {
     name: 'Fathima Meharin Irshad',
-    role: 'Backend Engineer',
-    image: '/src/assets/dazzling-star-svgrepo-com.svg',
-    bio: 'Handles data pipelines, API design, and server-side logic with reliability.'
+    role: 'UI/UX Designer',
+    front: 'Designs clean, accessible interfaces.',
+    back: 'Focuses on user flow and visual clarity.',
+    highlight: 'Led usability testing and layout design.'
   },
   {
     name: 'Geevar Saji Kuriakose',
-    role: 'ML Researcher',
-    image: '/src/assets/dazzling-star-svgrepo-com.svg',
-    bio: 'Works on visual speech models and real-time inference systems.'
+    role: 'ML Engineer',
+    front: 'Trains models on diverse visual datasets.',
+    back: 'Works on cross-user generalization.',
+    highlight: 'Curated multi-modal training data.'
   },
   {
-    name: 'Darsan Prasad',
-    role: 'Product Designer',
-    image: '/src/assets/dazzling-star-svgrepo-com.svg',
-    bio: 'Crafts intuitive interfaces with a focus on user empathy and clarity.'
+    name: 'Giribala Arun',
+    role: 'Frontend Engineer',
+    front: 'Implements responsive, polished UIs.',
+    back: 'Expert in React and Tailwind CSS.',
+    highlight: 'Built adaptive website components with responsiveness.'
   }
 ]
 
@@ -31,39 +35,33 @@ const Team = () => {
   return (
     <section id="team" className="w-full py-20 px-6 md:px-8">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center text-center gap-6">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-primary via-black to-primary bg-clip-text text-transparent tracking-tight leading-tight">
-          Our Team
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#64dfdf] tracking-tight leading-tight">
+          Meet the Team
         </h1>
-        <p className="text-base md:text-xl text-primary-dark max-w-4xl leading-relaxed">
-          Meet the minds behind this — engineers, designers, and researchers working together to make silent communication accessible to all.
+        <p className="text-base md:text-xl text-[#56cfe1] max-w-4xl leading-relaxed">
+          SilentSpeech is built by a focused team of engineers and designers. From decoding silent signals to crafting seamless interfaces, each member brings precision and purpose to the project.
         </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-12">
-          {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="relative group bg-[#F9FAFB] rounded-xl shadow-md overflow-hidden transition-all duration-300"
-            >
-              {/* Front Face */}
-              <div className="p-6 flex flex-col items-center text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="h-12 w-12 rounded-full mb-4 object-cover"
-                />
-                <h3 className="text-xl font-semibold text-primary mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-xl text-gray-600">{member.role}</p>
+      {/* Flippable Cards Section */}
+      <div className="max-w-screen-lg mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamCards.map((member, index) => (
+          <div key={index} className="group perspective">
+            <div className="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+              {/* Front Side */}
+              <div className="absolute w-full h-full bg-[#000000] text-[#56cfe1] border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-center items-center backface-hidden">
+                <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+                <p className="text-[1.1rem] text-gray-400 mb-2">{member.role}</p>
+                <p className="text-[1rem] text-gray-400 text-center">{member.front}</p>
               </div>
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-primary text-[#F0F8FF] flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-4">
-                <p className="text-[1.2rem] font-medium text-center">{member.bio}</p>
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-black text-[#56cfe1] rounded-xl shadow-md p-6 flex flex-col justify-center items-center rotate-y-180 backface-hidden">
+                <p className="text-[1.2rem] text-[#56cfe1] text-center mb-2">{member.back}</p>
+                <p className="text-[1rem] text-gray-400 text-center">Key: {member.highlight}</p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )
