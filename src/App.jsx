@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import About from './components/About'
 import Technology from './components/Technology'
 import Team from './components/Team'
+import FutureVision from './components/FutureVision'
 import SplashCursor from '../Reactbits/SplashCursor/SplashCursor'
 import Implementation from './components/Implementation'
 
@@ -18,6 +19,7 @@ const App = () => {
         <Technology />
         <Team />
         <Implementation />
+        <FutureVision />
       </div>
     </div>
   )
