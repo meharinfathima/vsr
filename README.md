@@ -26,5 +26,5 @@ SilentSpeech is a cutting-edge web interface designed to empower individuals who
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/silent-speech-ui.git
+   git clone https://github.com/meharinfathima/vsr.git
    cd silent-speech-ui
