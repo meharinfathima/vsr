@@ -1,12 +1,30 @@
-# React + Vite
+# Silent Speech Recognition UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SilentSpeech is a cutting-edge web interface designed to empower individuals who cannot speak by enabling silent communication through visual cues and gestures. This project showcases a futuristic UI for uploading and processing silent speech videos using advanced recognition models.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hero Section**: Bold introduction to SilentSpeech with a call-to-action button.
+- **About & Technology**: Overview of the mission and underlying tech.
+- **Team & Future Vision**: Interactive 3D flip cards highlighting contributors and roadmap.
+- **Video Upload Interface**: Dedicated page for users to upload silent speech videos.
+- **Responsive Design**: Fully optimized for desktop and mobile devices.
+- **Custom Cursor**: SplashCursor adds a dynamic visual experience.
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** (with Hooks)
+- **Tailwind CSS** for styling
+- **React Router** for navigation
+- **Git & GitHub** for version control
+- **VS Code** as the development environment
+
+## 📁 Project Structure
+
+
+## 🔧 Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/silent-speech-ui.git
+   cd silent-speech-ui
