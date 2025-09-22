@@ -1,27 +1,29 @@
 import React from "react"
 
-
-
 const futureCards = [
   {
     title: "Multilingual Visual Recognition",
-    desc: "Expand lip-reading models to support multiple languages and dialects, enabling inclusive communication.",
-    icon: "/src/assets/language-svgrepo-com.svg",
+    front: "Expand lip-reading models to support multiple languages and dialects.",
+    back: "Inclusive communication across cultures and regions.",
+    highlight: "Language Diversity",
   },
   {
     title: "AR/VR Integration",
-    desc: "Seamlessly integrate with AR and VR environments, bringing silent communication into immersive worlds.",
-    icon: "/src/assets/vr-svgrepo-com.svg",
+    front: "Integrate silent speech into immersive AR/VR environments.",
+    back: "Enhancing accessibility in virtual worlds.",
+    highlight: "Immersive Tech",
   },
   {
     title: "Wearable Devices",
-    desc: "Design lightweight, discreet camera-based wearables for capturing facial cues naturally in daily life.",
-    icon: "/src/assets/wearable-svgrepo-com.svg",
+    front: "Design discreet wearables for natural facial cue capture.",
+    back: "Seamless daily use with minimal intrusion.",
+    highlight: "On-the-Go UX",
   },
   {
     title: "Cross-User Adaptation",
-    desc: "Refine deep learning models to generalize across users with diverse facial features and articulation styles.",
-    icon: "/src/assets/adaptation-svgrepo-com.svg",
+    front: "Generalize models across diverse facial features.",
+    back: "Robust performance for all users.",
+    highlight: "Model Flexibility",
   },
 ]
 
@@ -40,36 +42,24 @@ const FutureVision = () => {
         </p>
       </div>
 
-      {/* Card Section with Background Glow */}
-      <div className="relative max-w-screen-lg mx-auto mt-16">
-        {/* Background Glow only for cards */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-transparent to-blue-500/20 
-                      rounded-3xl blur-3xl"
-        />
-
-        {/* Cards Grid */}
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 z-10">
-          {futureCards.map((card, index) => {
-            const Icon = card.icon
-            return (
-              <div
-                key={index}
-                className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl 
-                           p-6 flex flex-col items-center text-center shadow-lg 
-                           transition transform hover:-translate-y-2 hover:scale-105 
-                           hover:shadow-cyan-400/50"
-              >
-                <img src={card.icon} alt={card.title} className="w-12 h-12 mb-4" />
-
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-gray-200 leading-relaxed">{card.desc}</p>
+      {/* Card Section */}
+      <div className="max-w-screen-lg mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {futureCards.map((card, index) => (
+          <div key={index} className="group perspective">
+            <div className="relative w-full h-64 transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+              {/* Front Side */}
+              <div className="absolute w-full h-full bg-[#000000] text-[#56cfe1] border border-gray-200 rounded-xl shadow-md p-6 flex flex-col justify-center items-center backface-hidden">
+                <h3 className="text-xl font-semibold text-primary mb-2 text-center">{card.title}</h3>
+                <p className="text-[1rem] text-gray-400 text-center">{card.front}</p>
               </div>
-            )
-          })}
-        </div>
+              {/* Back Side */}
+              <div className="absolute w-full h-full bg-black text-[#56cfe1] rounded-xl shadow-md p-6 flex flex-col justify-center items-center rotate-y-180 backface-hidden">
+                <p className="text-[1.2rem] text-[#56cfe1] text-center mb-2">{card.back}</p>
+                <p className="text-[1rem] text-gray-400 text-center">Key: {card.highlight}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )

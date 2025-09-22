@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import About from './components/About'
@@ -7,21 +8,29 @@ import Team from './components/Team'
 import FutureVision from './components/FutureVision'
 import SplashCursor from '../Reactbits/SplashCursor/SplashCursor'
 import Implementation from './components/Implementation'
+import ButtonImplementation from './components/ButtonImplementation'
+
+const MainLayout = () => (
+  <div className='font-sans max-w-screen-lg mx-auto'>
+    <Navbar />
+    <Hero />
+    <About />
+    <Technology />
+    <Team />
+    <Implementation />
+    <FutureVision />
+  </div>
+)
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <SplashCursor />
-      <div className='font-sans max-w-screen-lg mx-auto'>
-        <Navbar />
-        <Hero />
-        <About />
-        <Technology />
-        <Team />
-        <Implementation />
-        <FutureVision />
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<MainLayout />} />
+        <Route path="/upload" element={<ButtonImplementation />} />
+      </Routes>
+    </Router>
   )
 }
 

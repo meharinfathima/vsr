@@ -5,19 +5,19 @@ const techCards = [
     title: 'Visual Recognition',
     front: 'Analyzes lip movements and facial expressions.',
     back: 'Uses computer vision to decode silent articulation.',
-    svgPath: '/src/assets/scrubber-svgrepo-com.svg'
+    svgPath: '/src/assets/visual-recognition.svg'
   },
   {
     title: 'Deep Learning',
     front: 'Learns silent speech patterns across users.',
     back: 'Trained on diverse visual datasets.',
-    svgPath: '/src/assets/certificate-check-svgrepo-com.svg'
+    svgPath: '/src/assets/deep-learning.svg'
   },
   {
     title: 'Real-Time Inference',
     front: 'Processes input instantly for seamless interaction.',
     back: 'Delivers low-latency predictions.',
-    svgPath: '/src/assets/clock-svgrepo-com.svg'
+    svgPath: '/src/assets/real-time.svg'
   }
 ]
 
