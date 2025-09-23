@@ -9,6 +9,7 @@ import FutureVision from './components/FutureVision'
 import SplashCursor from '../Reactbits/SplashCursor/SplashCursor'
 import Implementation from './components/Implementation'
 import ButtonImplementation from './components/ButtonImplementation'
+import LiveCamera from './components/LiveCamera'   // 👈 NEW
 
 const MainLayout = () => (
   <div className='font-sans max-w-screen-lg mx-auto'>
@@ -29,6 +30,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainLayout />} />
         <Route path="/upload" element={<ButtonImplementation />} />
+        <Route path="/live" element={<LiveCamera />} />   {/* 👈 NEW */}
       </Routes>
     </Router>
   )
