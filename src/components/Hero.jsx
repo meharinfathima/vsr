@@ -15,12 +15,24 @@ const Hero = () => {
           Welcome to Silent Speech Recognition, a revolutionary approach to communication for those who cannot speak. Our technology enables individuals to express themselves through silent gestures and movements, bridging the gap between thought and speech.
         </p>
 
-        {/* Navigation Button */}
-        <Link to="/upload">
-          <button className="mt-6 px-6 py-3 md:text-[1.2rem] bg-[#64dfdf] text-black rounded-full text-lg font-medium hover:bg-[#a0fcfc] transition">
-            Get Started with Silent Speech Recognition Today!
-          </button>
-        </Link>
+       
+        <p className="mt-4 text-[1.5rem] font-bold text-[#64dfdf]">
+          Get Started with Silent Speech Recognition Today!
+        </p>
+        <div className="flex gap-4 mt-4">
+          <Link
+            to="/upload"
+            className="px-6 py-3 w-40 text-center md:text-[1.1rem] bg-[#64dfdf] text-black rounded-full text-lg font-medium hover:bg-[#a0fcfc] transition"
+          >
+            Upload Video
+          </Link>
+          <Link
+            to="/live"
+            className="px-6 py-3 w-40 text-center md:text-[1.1rem] bg-[#64dfdf] text-black rounded-full text-lg font-medium hover:bg-[#a0fcfc] transition"
+          >
+            Live
+          </Link>
+        </div>
       </div>
     </section>
   )
