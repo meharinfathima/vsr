@@ -23,21 +23,23 @@ const LiveCamera = () => {
 
   const startLive = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      if (videoRef.current) {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true }); // request user webcam access
+      if (videoRef.current) { // attach video stream to video element
         videoRef.current.srcObject = stream;
       }
       streamRef.current = stream;
-      setIsLive(true);
+      setIsLive(true); // set it to live
 
       // start sending frames
-      intervalRef.current = setInterval(() => {
+      intervalRef.current = setInterval(() => { 
         if (videoRef.current) {
           const canvas = document.createElement("canvas");
+          // set canvas width and height
           canvas.width = videoRef.current.videoWidth;
           canvas.height = videoRef.current.videoHeight;
           const ctx = canvas.getContext("2d");
           ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
+          // frame wise
           const frameData = canvas.toDataURL("image/jpeg");
           socket.emit("frame", frameData);
         }
