@@ -1,14 +1,14 @@
-import React, { useRef, useEffect, useState } from "react";
-import io from "socket.io-client";
+import React, { useRef, useEffect, useState } from "react"; // react and react hooks
+import io from "socket.io-client"; // socket.io to communicate with backend
 
 const socket = io("http://localhost:5000"); // backend server
 
 const LiveCamera = () => {
-  const videoRef = useRef(null);
-  const [subtitle, setSubtitle] = useState("");
-  const [isLive, setIsLive] = useState(false);
-  const streamRef = useRef(null);
-  const intervalRef = useRef(null);
+  const videoRef = useRef(null); // <video> DOM element
+  const [subtitle, setSubtitle] = useState(""); 
+  const [isLive, setIsLive] = useState(false); // track whether the camera is live or not
+  const streamRef = useRef(null); // store webcam MediaStream
+  const intervalRef = useRef(null); 
 
   useEffect(() => {
     // receive predictions
@@ -17,7 +17,7 @@ const LiveCamera = () => {
     });
 
     return () => {
-      socket.off("prediction");
+      socket.off("prediction"); 
     };
   }, []);
 
